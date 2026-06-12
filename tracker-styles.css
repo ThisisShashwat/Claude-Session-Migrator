@@ -1,0 +1,69 @@
+/* tracker-styles.css */
+/* Custom styling and animations for SessionMigrator injected components */
+
+/* ── Spinner Animation ── */
+@keyframes session-migrator-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.session-migrator-spinner {
+  animation: session-migrator-spin 1s linear infinite;
+}
+
+/* ── Toast Fade-in/out Animations ── */
+@keyframes session-migrator-fadeup {
+  from {
+    transform: translate(-50%, 14px);
+    opacity: 0;
+  }
+  to {
+    transform: translate(-50%, 0);
+    opacity: 1;
+  }
+}
+
+.session-migrator-toast {
+  animation: session-migrator-fadeup 0.2s ease-out;
+}
+
+/* ── Tooltip Fades ── */
+.tooltip-content {
+  transition: opacity 0.15s ease, transform 0.15s ease;
+}
+
+/* ── Dropdown Select styling adjustments (native feeling overlays) ── */
+.session-migrator-dropdown-dropdown {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+  max-height: 250px;
+  overflow-y: auto;
+}
+
+/* ── Sidebar Container Queries for Smooth Collapsing ── */
+.csm-sidebar-container {
+  container-type: inline-size;
+  width: 100%;
+}
+
+@container (max-width: 240px) {
+  #claude-session-migrator-bar {
+    padding: 6px 8px !important;
+  }
+  #csm-profile-label {
+    display: none !important;
+  }
+  #csm-reset-text {
+    display: none !important;
+  }
+  #csm-action-links {
+    display: none !important;
+  }
+  #csm-quota-text {
+    width: 100% !important;
+    text-align: center !important;
+  }
+}
